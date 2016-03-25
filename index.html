@@ -1,96 +1,201 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Question Answering for Frequently Asked Questions (QA-FAQ) by qa4faq</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Question Answering for Frequently Asked Questions (QA-FAQ)</h1>
-      <h2 class="project-tagline">EVALITA 2016 - QA-FAQ: Question Answering for Frequently Asked Questions Task</h2>
-    </section>
+<html>
 
-    <section class="main-content">
-      <h3>
-<a id="brief-task-description" class="anchor" href="#brief-task-description" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Brief task description</h3>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="QA4FAQ @ EVALITA 2016 : Question Answering for Frequently Asked Questions Task">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>QA4FAQ @ EVALITA 2016</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/qa4faq">View on GitHub</a>
+
+          <h1 id="project_title">QA4FAQ @ EVALITA 2016</h1>
+          <h2 id="project_tagline">Question Answering for Frequently Asked Questions Task</h2>
+
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>
+<a id="news" class="anchor" href="#news" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a name="news"></a>News</h3>
+
+<ul>
+<li>25th Mar 2016: Web site is on-line</li>
+</ul>
+
+<h3>
+<a id="menu" class="anchor" href="#menu" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a name="menu"></a>Menu</h3>
+
+<ul>
+<li><a href="#task-description">Task Description</a></li>
+<li><a href="#data-description">Data Description</a></li>
+<li><a href="#data-format">Data Format</a></li>
+<li><a href="#how-to-participate">How to Participate</a></li>
+<li><a href="#important-dates">Important Dates</a></li>
+<li><a href="#organizers">Organizers</a></li>
+</ul>
+
+<h3>
+<a id="task-description" class="anchor" href="#task-description" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a name="task-description"></a>Task Description</h3>
 
 <p>Searching within the Frequently Asked Questions (FAQ) page of a web site is a critical task: customers might feel overloaded by many irrelevant questions and become frustrated due to the difficulty in finding the FAQ suitable for their problems. Perhaps they are right there, but just worded in a different way than they know. </p>
 
 <p>The proposed task consists in retrieving a list of relevant FAQs and corresponding answers related to the query issued by the user.</p>
 
-<p><a href="http://www.aqp.it/">Acquedotto Pugliese (AQP)</a> developed a semantic retrieval engine for FAQs, called <a href="http://aqprisponde.aqp.it/ask.php">AQP Risponde</a>, based on Question Answering (QA) techniques. The system allows customers to ask their own questions, and retrieves a list of relevant FAQs and corresponding answers. Furthermore, customers can select one FAQ among those retrieved by the system and can provide their feedback about the perceived accuracy of the answer.</p>
+<p><a href="http://www.aqp.it/">Acquedotto Pugliese</a> (AQP) developed a semantic retrieval engine for FAQs, called <a href="http://aqprisponde.aqp.it/ask.php">AQP Risponde</a>, based on Question Answering (QA) techniques. The system allows customers to ask their own questions, and retrieves a list of relevant FAQs and corresponding answers. Furthermore, customers can select one FAQ among those retrieved by the system and can provide their feedback about the perceived accuracy of the answer.</p>
 
-<p>This task poses relevant research challenges concerning both the usage of the Italian language in a deep QA architecture, and the variety of language expressions adopted by customers to formulate the same information need.</p>
+<p>AQP Risponde poses relevant research challenges concerning both the usage of the Italian language in a deep QA architecture, and the variety of language expressions adopted by customers to formulate the same information need.</p>
 
-<p>The task that we propose is strongly related to the recently organized task at Semeval 2015 and 2016 about Answer Selection in Community Question Answering [1]. This task helps to automate the process of finding good answers to new questions in a community-created discussion forum (e.g., by retrieving similar questions in the forum and by identifying the posts in the answer threads of similar questions that answer the original one as well).
-Moreover, the QA-FAQ has some common points with the Textual Similarity task [2] that received an increasing amount of attention in recent years.</p>
+<p>The task that we propose is strongly related to the recently organized task at Semeval 2015 and 2016 about Answer Selection in Community Question Answering <a href="#ref-1">1</a>. This task helps to automate the process of finding good answers to new questions in a community-created discussion forum (e.g., by retrieving similar questions in the forum and by identifying the posts in the answer threads of similar questions that answer the original one as well).
+Moreover, the QA4FAQ has some common points with the Textual Similarity task <a href="#ref-2">2</a> that received an increasing amount of attention in recent years.</p>
+
+<p><a href="#menu">Menu</a></p>
 
 <h3>
-<a id="description-and-examples-of-the-data" class="anchor" href="#description-and-examples-of-the-data" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Description and examples of the data</h3>
+<a id="data-description" class="anchor" href="#data-description" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a name="data-description">Data Description</a>
+</h3>
 
-<p>AQP received about 24,000 questions and collected about 2,500 user feedbacks. We rely on these data for building the dataset for the task. In particular, we provide:</p>
+<p>AQP Risponde provides a back-end that allows to analyze both the query log and the customers' feedback to discover, for instance, new emerging problems that need to be encoded as FAQ. 
+AQP Risponde is provided as web and mobile application for <a href="https://play.google.com/store/apps/details?id=com.questioncube.aqprisponde&amp;hl=it">Android</a> and <a href="https://itunes.apple.com/it/app/aqp-risponde/id1006106860">iOS</a> and is currently running in Acquedotto Pugliese customer care.
+AQP received about 25,000 questions and collected about 2,500 user feedbacks. We rely on these data for building the dataset for the task. In particular, we provide:</p>
 
 <ul>
-<li>a knowledge base of about 400 FAQs. Each FAQ is composed of a question, an answer, and a set of metadata (category and tags);</li>
-<li>a set of user queries. The queries will be collected by analyzing the AQP Risponde system log;</li>
-<li>a set of pairs  that will be exploited to evaluate the contestants. We build these pairs by analyzing the user feedbacks provided by the real users of AQP Risponde. We will manually check the user feedbacks in order to remove noisy or false feedbacks.</li>
+<li>a knowledge base of about 470 FAQs. Each FAQ is composed of a question, an answer, and a set of metadata (category and tags);</li>
+<li>a set of user queries. The queries are collected by analyzing the AQP Risponde system log;</li>
+<li>a set of pairs <em></em> that are exploited to evaluate the contestants. We build these pairs by analyzing the user feedbacks provided by the real users of AQP Risponde. We manually check the user feedbacks in order to remove noisy or false feedbacks.</li>
 </ul>
 
-<p>We will provide a little sample set for the system development and a test set for the evaluation. Should we collect a sufficient number of user feedbacks, we will also provide a set of training data. However, AQP is interested in the development of <em>unsupervised systems</em> since AQP Risponde should be able to provide good performance without any feedback.</p>
+<p>We will provide a little sample set for the system development and a test set for the evaluation. We will not provide a set of training data: AQP is interested in the development of unsupervised systems since AQP Risponde should be able to provide good performance without any user feedback.</p>
 
-<p>Following, an example of FAQ is reported:<br></p>
+<p>Following, an example of FAQ is reported:</p>
 
 <blockquote>
 <p><strong>Question:</strong> Come posso telefonare al numero verde da un cellulare?<br>
-<strong>Answer:</strong> "E' possibile chiamare il Contact Center AQP per segnalare un guasto o per un pronto intervento telefonando gratuitamente anche da cellulare al numero verde 800.735.735. Mentre per chiamare il Contact Center AQP per servizi commerciali 800.085.853 da un cellulare e dall'estero e necessario comporre il  numero +39.080.5723498 (il costo della chiamata e secondo il piano tariffario del chiamante)."<br>
-<strong>Category:</strong> numero verde<br>
+<strong>Answer:</strong> "E' possibile chiamare il Contact Center AQP per segnalare un guasto o per un pronto intervento telefonando &gt;gratuitamente anche da cellulare al numero verde 800.735.735. Mentre per chiamare il Contact Center AQP per servizi &gt;commerciali 800.085.853 da un cellulare e dall'estero e necessario comporre il  numero +39.080.5723498 (il costo della &gt;chiamata e secondo il piano tariffario del chiamante)."<br>
 <strong>Tags:</strong> canali, numero verde, cellulare</p>
 </blockquote>
 
-<p>The previous FAQ is relevant for the query: "si può telefonare da cellulare al numero verde?". We will provide a simple baseline based on a classical Information Retrieval model.</p>
+<p>The previous FAQ is relevant for the query: <em>"Si può telefonare da cellulare al numero verde?"</em>.
+We will provide a simple baseline based on a classical Information Retrieval model.</p>
+
+<p><a href="#menu">Menu</a></p>
 
 <h3>
-<a id="references" class="anchor" href="#references" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>References</h3>
+<a id="data-format" class="anchor" href="#data-format" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a name="data-format"></a>Data Format</h3>
 
-<p>1 Preslav Nakov,  Lluís Márquez,  Walid Magdy,  Alessandro  Moschitti, Jim Glass,  and  Bilal Randeree. SemEval-2015 Task 3: Answer Selection in Community Question Answering.  Proceedings of the 9th International Workshop on Semantic Evaluation (SemEval 2015), June 2015, Association for Computational Linguistics, 269-281, <a href="http://www.aclweb.org/anthology/S15-2047">http://www.aclweb.org/anthology/S15-2047</a>.</p>
+<p>FAQs will be provided in CSV format using ‘;’ as separator. The file will be encoded in UTF-8 format. Each FAQ is described by the following fields:</p>
 
-<p>2 Eneko Agirre, Carmen Banea, Claire Cardie, Daniel Cer, Mona Diab, Aitor Gonzalez-Agirre, Weiwei Guo, Inigo Lopez-Gazpio, Montse Maritxalar, Rada Mihalcea, German Rigau, Larraitz Uria and Janyce Wiebe. SemEval-2015 Task 2: Semantic Textual Similarity, English, Spanish and Pilot on Interpretability. Proceedings of the 9th International Workshop on Semantic Evaluation (SemEval 2015), June 2015, Association for Computational Linguistics, 252-263, <a href="http://www.aclweb.org/anthology/S15-2045">http://www.aclweb.org/anthology/S15-2045</a>.</p>
+<ul>
+<li>
+<strong>id:</strong> a number that uniquely identifies the FAQ;</li>
+<li>
+<strong>question:</strong> the question text of the current FAQ;</li>
+<li>
+<strong>answer:</strong> the answer text of the current FAQ;</li>
+<li>
+<strong>tag:</strong> a set of tags separated by ‘,’.</li>
+</ul>
+
+<p>Test data will be provided as a text file composed by two strings separated by the TAB character. The first string is the user query id, while the second string is the text of the user query. For example:</p>
+
+<blockquote>
+<p>1  Come posso telefonare al numero verde da un cellulare?
+2  Come si effettua l’autolettura del contatore?</p>
+</blockquote>
+
+<p>The participants must provide results in a text file. For each query in the test data the participants can provide max 25 answers ranked according to their system. Each line in the file must contain three values separated by the TAB character:</p>
+
+<blockquote>
+<p>     </p>
+</blockquote>
+
+<p>Systems will be ranked according to the <strong>accuracy@1</strong>. We will compute the precision of the system taking into account only the first answer. This metric will be used for the final task ranking. Moreover, we will provide other measures, such as: MAP, GMAP and MRR, for further analysis.</p>
+
+<p><a href="#menu">Menu</a></p>
+
+<h3>
+<a id="how-to-participate" class="anchor" href="#how-to-participate" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a name="how-to-participate"></a>How to Participate</h3>
+
+<p>Register your team by using the registration web form at <a href="http://www.evalita.it/2016">http://www.evalita.it/2016</a> (available soon, see <a href="#important-dates">important dates</a> below).</p>
+
+<p>Information about the submission of results and their format will be available in the Task guidelines.</p>
+
+<p>We invite the potential participants to subscribe to our <a href="https://groups.google.com/forum/#!forum/qa4faq">mailing list</a> in order to be kept up to date with the latest news related to the task. Please share comments and questions with the mailing list. The organizers will assist you for any potential issues that could be raised.</p>
+
+<p>Participants will be required to provide an abstract and a technical report including a brief description of their approach, an illustration of their experiments, in particular techniques and resources used, and an analysis of their results for the publication in the Proceedings of contest; guidelines are outlined on the EVALITA's 2016 web site.</p>
+
+<p><a href="#menu">Menu</a></p>
+
+<h3>
+<a id="important-dates" class="anchor" href="#important-dates" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a name="important-dates"></a>Important Dates</h3>
+
+<ul>
+<li>TBD 2016: on-line registration opens</li>
+<li>30th May 2016: development data available to participants</li>
+<li>12th September 2016: test data available, registration closes</li>
+<li>19th September 2016: system results due to organizers</li>
+<li>26th September 2016: assessment returned to participants</li>
+<li>31st October 2016: technical reports due to organizers</li>
+<li>5th-7th December 2016: final workshop (one day during CLIC-2016)</li>
+</ul>
+
+<p><a href="#menu">Menu</a></p>
+
+<h3>
+<a id="references" class="anchor" href="#references" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a name="references"></a>References</h3>
+
+<p><a name="ref-1"></a>1 Preslav Nakov,  Lluís Márquez,  Walid Magdy,  Alessandro  Moschitti, Jim Glass,  and  Bilal Randeree. SemEval-2015 Task 3: Answer Selection in Community Question Answering.  Proceedings of the 9th International Workshop on Semantic Evaluation (SemEval 2015), June 2015, Association for Computational Linguistics, 269-281, <a href="http://www.aclweb.org/anthology/S15-2047">http://www.aclweb.org/anthology/S15-2047</a>.</p>
+
+<p><a name="ref-2"></a>2 Eneko Agirre, Carmen Banea, Claire Cardie, Daniel Cer, Mona Diab, Aitor Gonzalez-Agirre, Weiwei Guo, Inigo Lopez-Gazpio, Montse Maritxalar, Rada Mihalcea, German Rigau, Larraitz Uria and Janyce Wiebe. SemEval-2015 Task 2: Semantic Textual Similarity, English, Spanish and Pilot on Interpretability. Proceedings of the 9th International Workshop on Semantic Evaluation (SemEval 2015), June 2015, Association for Computational Linguistics, 252-263, <a href="http://www.aclweb.org/anthology/S15-2045">http://www.aclweb.org/anthology/S15-2045</a>.</p>
+
+<p><a href="#menu">Menu</a></p>
 
 <hr>
 
 <h3>
-<a id="task-organizers" class="anchor" href="#task-organizers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Task Organizers</h3>
+<a id="organizers" class="anchor" href="#organizers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a name="organizers"></a>Organizers</h3>
 
 <ul>
 <li>
-<em>Francesco Lovecchio</em>, AQP S.p.a.</li>
-<li>
-<em>Vito Manzari</em>, SudSistemi S.r.l.</li>
+<em>Annalina Caputo</em>, Dipartimento di Informatica, Università degli Studi di Bari Aldo Moro</li>
 <li>
 <em>Marco de Gemmis</em>, QuestionCube S.r.l.</li>
 <li>
 <em>Pasquale Lops</em>, Dipartimento di Informatica, Università degli Studi di Bari Aldo Moro</li>
 <li>
-<em>Annalina Caputo</em>, Dipartimento di Informatica, Università degli Studi di Bari Aldo Moro</li>
+<em>Francesco Lovecchio</em>, AQP S.p.a.</li>
+<li>
+<em>Vito Manzari</em>, SudSistemi S.r.l.</li>
 </ul>
 
 <h3>
-<a id="contact" class="anchor" href="#contact" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Contact</h3>
+<a id="contacts" class="anchor" href="#contacts" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a name="contacts"></a>Contacts</h3>
 
-<p>E-mail: <a href="mailto:qa4faq@gmail.com">qa4faq@gmail.com</a></p>
+<p>If you have any questions, please contact us: <a href="mailto:qa4faq@gmail.com">qa4faq@gmail.com</a>.</p>
 
-      <footer class="site-footer">
+<p><a href="#menu">Menu</a></p>
+      </section>
+    </div>
 
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
       </footer>
+    </div>
 
-    </section>
+    
 
-  
   </body>
 </html>
